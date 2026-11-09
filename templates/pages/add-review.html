@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Library - Add Review</title>
+
+    <link rel="icon" type="image/png" href="../assets/icons/main-icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo-link">
+            <div>
+                <img src="../assets/images/mlib-icon.svg" alt="MLib logo " height="32">
+                <span>MLib</span>
+            </div>
+        </a>
+        
+        <nav>
+            <a href="pages/add-review.html">
+                <button class='add-button' aria-label="Add new movie review">
+                    <span>+</span>
+                </button>
+            </a>    
+        </nav>
+    </header>
+
+    <main>
+        <div class="review-page-container">
+            <h2>New Review</h2>
+
+            <div class="review-container">
+                <form>
+                    <div class="form-group">
+                        <label for="movie-name">Movie Name</label>
+                        <input type="text" id="movie-name" placeholder='Enter the movie title'>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poster-url">Poster URL</label>
+                        <input type="text" id="poster-url" placeholder='Paste image URL (jpg or png)'>
+                    </div>
+                
+                </form> 
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rating">Stars</label>
+                        <select id="rating-select">
+                            <option value="">Choose a rating</option>
+                            <option value="1">&#x2605;&#x2606;&#x2606;&#x2606;&#x2606; - 1 Star</option>
+                            <option value="2">&#x2605;&#x2605;&#x2606;&#x2606;&#x2606; - 2 Stars</option>
+                            <option value="3">&#x2605;&#x2605;&#x2605;&#x2606;&#x2606; - 3 Stars</option>
+                            <option value="4">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606; - 4 Stars</option>
+                            <option value="5">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605; - 5 Stars</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="watched-date">Watched Date</label>
+                        <input type="date" id="watched-date" placeholder='Choose a rating'>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-text"></label>
+                    <textarea id="review-text" rows="5" placeholder="Write yout review here"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Add Review
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MLib &ndash; My Movie Library</p>
+    </footer>
+</body>
+</html>
