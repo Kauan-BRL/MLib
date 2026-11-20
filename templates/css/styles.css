@@ -61,7 +61,7 @@ header span{
 
 .add-button:hover{
     transition: transform 0.1s ease;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .lista-filmes-container {
@@ -91,17 +91,6 @@ header span{
     }
 }
 
-@keyframes fadeInUp {
-    from { 
-        opacity: 0;            
-        transform: translateY(20px); 
-    }
-    to { 
-        opacity: 1;                  
-        transform: translateY(0);
-    }
-}
-
 .movie-card{
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(141, 153, 174, 1);
@@ -111,9 +100,7 @@ header span{
     height: 396px;
     text-align: center;
 
-    transform-origin: center;
-    transition: box-shadow 0.3s ease-in-out;
-    animation: fadeInUp 0.8s ease-out forwards; 
+    transform-origin: center; 
 }
 
 .movie-card img{
@@ -135,7 +122,7 @@ header span{
 
 .movie-card:hover{
     transition: transform 0.1s ease;
-    transform: scale(1.025);
+    transform: scale(1.05);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .rating{
@@ -174,6 +161,8 @@ header a{
 .review-page-container{
     max-width: 850px;
     margin: 60px auto;
+    transition:box-shadow 0.3s ease-in-out;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .review-page-container h2{
@@ -181,6 +170,7 @@ header a{
     font-weight:600;
     text-align:center;
     margin-bottom: 20px;
+
 }
 
 .review-container{
@@ -242,6 +232,11 @@ header a{
         flex-direction:column;
         gap:0px;
     }
+
+    .submit-button:active{
+        transition: transform 0.2s ease;
+        transform: scale(1.025);
+}
 }
 
 .submit-button{
@@ -256,6 +251,13 @@ header a{
     font-family: garamond;
 
     cursor:pointer;
+    transform-origin: center;
+
+}
+
+.submit-button:hover{
+    transition: transform 0.2s ease;
+    transform: scale(1.025);
 }
 
 .flatpickr-calendar {
@@ -322,6 +324,17 @@ select {
 
 /* Movie-details-page*/
 
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;            
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1;                  
+        transform: translateY(0);
+    }
+}
+
 .movie-details-container{
     display:flex;
     justify-content: center;
@@ -337,6 +350,9 @@ select {
     padding: 86px 90px;
 
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    transition:box-shadow 0.3s ease-in-out;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .movie-details-card{
