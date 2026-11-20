@@ -7,6 +7,8 @@
 
     <link rel="icon" type="image/png" href="../assets/icons/main-icon.png">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
 </head>
 <body>
     <header>
@@ -52,7 +54,7 @@
 
                     <div class="form-group">
                         <label for="watched-date">Watched Date</label>
-                        <input type="date" id="watched-date" >
+                        <input type="date" id="watched-date" placeholder="Select a Date">
                     </div>
                 </div>
 
@@ -71,5 +73,17 @@
     <footer>
         <p>&copy; 2026 MLib &ndash; My Movie Library</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <script>
+        flatpickr("#watched-date", {
+            locale: "pt",
+            dateFormat: "d/m/Y",
+            allowInput: true,
+            disableMobile: true,
+            maxDate: "today"
+        });
+    </script>
 </body>
 </html>

@@ -26,7 +26,7 @@ header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px ;
+    padding: 1% 5% ;
 }
 
 header span{
@@ -48,6 +48,8 @@ header span{
     justify-content: center;
     align-items:center;
     cursor:pointer;
+
+    transform-origin: center;
 }
 
 .add-button span{
@@ -57,15 +59,47 @@ header span{
     transform:translateX(-0.5px);    
 }
 
+.add-button:hover{
+    transition: transform 0.1s ease;
+    transform: scale(1.1);
+}
+
 .lista-filmes-container {
     max-width:1000px;
     padding: 26px 20px;
     margin:0 auto;
 
     display:flex;
-    justify-content:center;
     flex-wrap: wrap;
     gap: 60px 40px;
+}
+
+@media (max-width: 540px){
+    .lista-filmes-container{
+        justify-content:center;
+    }
+
+    .movie-card:active{
+    transition: transform 0.1s ease;
+    transform: scale(1.025);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .add-button:active{
+        transform: scale(1.1);
+        transition: transform 0s ease;
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;            
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1;                  
+        transform: translateY(0);
+    }
 }
 
 .movie-card{
@@ -76,6 +110,10 @@ header span{
     width: 200px;
     height: 396px;
     text-align: center;
+
+    transform-origin: center;
+    transition: box-shadow 0.3s ease-in-out;
+    animation: fadeInUp 0.8s ease-out forwards; 
 }
 
 .movie-card img{
@@ -95,6 +133,11 @@ header span{
     text-decoration:none;
 }
 
+.movie-card:hover{
+    transition: transform 0.1s ease;
+    transform: scale(1.025);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
 .rating{
     color: rgba(239, 35, 60, 1);
     font-size: 27px;
@@ -180,6 +223,27 @@ header a{
     flex:1;
 }
 
+@media (max-width: 540px){
+    .review-page-container{
+        margin:25px auto;
+        padding: 0 15px;
+    }
+
+    .review-container{
+        padding: 25px 20px;
+    }
+
+    .form-group label{
+        font-size:20px;
+        padding-right: 2px;
+    }
+
+    .form-row{
+        flex-direction:column;
+        gap:0px;
+    }
+}
+
 .submit-button{
     color:white;
     background-color:rgba(43, 45, 66, 1);
@@ -192,6 +256,68 @@ header a{
     font-family: garamond;
 
     cursor:pointer;
+}
+
+.flatpickr-calendar {
+    background: #17215a;
+    border: 1px solid #34445d;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .35);
+}
+
+.flatpickr-months,
+.flatpickr-weekdays {
+    background: #17215a;
+}
+
+.flatpickr-current-month,
+.flatpickr-weekday {
+    color: #ffffff;
+}
+
+.flatpickr-day {
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.flatpickr-day:hover {
+    background: #34458c;
+    border-color: #34458c;
+}
+
+.flatpickr-day.selected {
+    background: #8b9cff;
+    border-color: #8b9cff;
+    color: #17215a;
+}
+
+.flatpickr-day.today {
+    border-color: #8b9cff;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: #ffffff;
+}
+
+.flatpickr-monthDropdown-months {
+    background: #17215a;
+    color: #ffffff;
+}
+
+.flatpickr-input {
+    cursor: pointer;
+}
+
+input,
+select {
+    border: 2px solid #8b9cff;
+    outline: none;
+    border-radius: 12px;
+}
+
+input:focus,
+select {
+    border-color: #ffffff;
 }
 
 /* Movie-details-page*/
@@ -258,4 +384,38 @@ header a{
 
 .review-title{
     margin-bottom:5px;
+}
+
+@media(max-width:540px){
+    .movie-details-container{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+
+        margin: 30px 15px;
+        padding: 15px 20px;
+    }
+
+    .movie-details-card img{
+        width:100%;
+        max-width:190px;
+    }
+
+    .movie-title{
+        font-size:30px;
+        text-align:center;
+        margin-bottom:25px
+    }
+
+    .movie-section p{
+        font-size:16px;
+    }
+
+    .movie-section strong{
+        font-size:20px
+    }
+
+    .rating{
+        font-size:23px;
+    }
 }
